@@ -16,7 +16,7 @@ int new_path(char **args)
 	{
 		if (execvp(args[0], args) == -1)
 		{
-			perror("error in new_path: child process");
+			perror("error in simple_shell:");
 		}
 		exit(EXIT_FAILURE);
 
