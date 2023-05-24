@@ -27,4 +27,12 @@ int custom_exit(char **args);
 int _env(char **args);
 int _help(char **args);
 
+/* test */
+
+char *_getenv(const char *name);
+void _setenv(char **args);
+void _unsetenv(char **args);
+int _strlen(char *s);
+char *concat_all(char *name, char *sep, char *value);
+
 #endif
