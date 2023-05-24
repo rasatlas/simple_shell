@@ -8,18 +8,13 @@
 
 int custom_exit(char **args)
 {
-	int i, n;
-
 	if (args[1])
 	{
-		n = atoi(args[1]);
-		if (n <= -1)
-			n = 2;
-		free(args);
-		exit(n);
+		return (atoi(args[1]));
 	}
-	for (i = 0; args[i]; i++)
-		free(args[i]);
-	free(args);
-	exit(0);
+
+	else
+	{
+		return (0);
+	}
 }
