@@ -1,7 +1,7 @@
 #include "simpleShell.h"
 
 /**
- * custom_exit - to end a process
+ * custom_exit - ends process and exits simple_shell
  * @args: argument
  * Return: 0 to end the process
  */
