@@ -8,29 +8,16 @@
 
 int _cd(char **args)
 {
-	char *new_dir;
-
-	if (args[1] == NULL || strcmp(args[1], "~") == 0)
+	if (args[1] == NULL)
 	{
-		new_dir = getenv("HOME");
-	}
-	else if (strcmp(args[1], "-") == 0)
-	{
-		new_dir = getenv("OLDPWD");
+		fprintf(stderr, "Expected argument to \"cd\"\n");
 	}
 	else
 	{
-		new_dir = args[1];
+		if (chdir(args[1]) != 0)
+		{
+			perror("Error in _cd: changing dir\n");
+		}
 	}
-
-	if (chdir(new_dir) != 0)
-	{
-		perror("cd");
-		return (0);
-	}
-
-	setenv("OLDPWD", getenv("PWD"), 1);
-	setenv("PWD", getcwd(NULL, 0), 1);
-
-	return (1);
+	return (-1);
 }
